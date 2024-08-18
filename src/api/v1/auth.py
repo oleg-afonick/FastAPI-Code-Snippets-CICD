@@ -39,7 +39,6 @@ async def login_for_access_token(db: db_dependency,
     return {"access_token": access_token, "token_type": "bearer"}
 
 
-
 @auth_router.post("/token")
 async def token(form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
                 db: db_dependency):
@@ -54,4 +53,3 @@ async def token(form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
         data={**user.to_dict()}
     )
     return {'access_token': access_token, 'token_type': 'bearer'}
-

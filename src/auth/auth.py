@@ -88,4 +88,3 @@ def has_role(required_roles: List[RoleEnum]):
             )
         return current_user
     return role_checker
-
