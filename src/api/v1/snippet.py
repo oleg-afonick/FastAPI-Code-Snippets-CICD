@@ -57,7 +57,8 @@ async def update_snippet(uuid: str, snippet: CodeSnippetUpdate, db: db_dependenc
     updated_snippet = await update_code_snippet(db, uuid, snippet)
     if not updated_snippet:
         raise HTTPException(status_code=404, detail="Snippet not found")
-    logger.info(f"Сниппет с UUID {uuid} обновлён: {updated_snippet.model_dump()}")
+    logger.info(f"Сниппет с UUID {uuid} обновлён: {updated_snippet.code} |"
+                f"{updated_snippet.programming_language}|")
     return updated_snippet
 
 
