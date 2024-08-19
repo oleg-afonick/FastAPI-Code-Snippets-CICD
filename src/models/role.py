@@ -3,7 +3,7 @@ from typing import Dict
 from sqlalchemy import Column, Integer, Enum
 from sqlalchemy.orm import relationship
 
-from src.core.types import RoleEnum
+from core.types import RoleEnum
 from .base import Base
 
 

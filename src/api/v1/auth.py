@@ -5,11 +5,11 @@ from fastapi.security import OAuth2PasswordRequestForm
 from starlette import status
 from starlette.exceptions import HTTPException
 
-from src.auth.auth import create_access_token
-from src.db.db import db_dependency
-from src.models import User
-from src.schemas.user import UserRegisterSchema, UserLoginSchema
-from src.services.auth import reg_user, authenticate_user
+from auth.auth import create_access_token
+from db.db import db_dependency
+from models import User
+from schemas.user import UserRegisterSchema, UserLoginSchema
+from services.auth import reg_user, authenticate_user
 
 auth_router = APIRouter(prefix="/auth", tags=['auth'])
 

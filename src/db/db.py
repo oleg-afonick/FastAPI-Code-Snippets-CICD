@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import (async_sessionmaker,
                                     create_async_engine,
                                     AsyncSession, AsyncEngine, AsyncConnection)
 
-from src.core.config import app_settings
+from core.config import app_settings
 
 
 class MyException(Exception):

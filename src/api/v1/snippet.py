@@ -3,13 +3,12 @@ from typing import Optional
 
 from fastapi import HTTPException, APIRouter, Depends
 
-from src.auth.auth import has_role
-from src.core.types import RoleEnum
-from src.db.db import db_dependency
-from src.models import CodeSnippet
-from src.schemas.snippet import CodeSnippetCreate, CodeSnippetUpdate, CodeSnippetResponse
-from src.services.snippet import get_code_snippet_by_uuid, create_code_snippet, update_code_snippet, delete_code_snippet
-
+from auth.auth import has_role
+from core.types import RoleEnum
+from db.db import db_dependency
+from models import CodeSnippet
+from schemas.snippet import CodeSnippetCreate, CodeSnippetUpdate, CodeSnippetResponse
+from services.snippet import get_code_snippet_by_uuid, create_code_snippet, update_code_snippet, delete_code_snippet
 snippets_router = APIRouter(prefix="/snippets", tags=['snippets'])
 
 logger = logging.getLogger("snippets_logger")

@@ -2,13 +2,13 @@ from fastapi import HTTPException
 from sqlalchemy import select
 from starlette import status
 
-from src.auth.auth import bcrypt_context
-from src.db.db import db_dependency
-from src.models import User
-from src.schemas.user import UserRegisterSchema, UserLoginSchema
+from auth.auth import bcrypt_context
+from db.db import db_dependency
+from models import User
+from schemas.user import UserCreate, UserRead
 
 
-async def create_new_user(db: db_dependency, user_data: UserRegisterSchema) -> UserLoginSchema:
+async def create_new_user(db: db_dependency, user_data: UserCreate) -> UserRead:
     create_user_request: User = User(
         login=user_data.login,
         email=user_data.email,
@@ -18,12 +18,12 @@ async def create_new_user(db: db_dependency, user_data: UserRegisterSchema) -> U
     db.add(create_user_request)
     await db.commit()
 
-    created_user_data: UserLoginSchema = await get_user_by_login(db, user_data.login)
+    created_user_data: UserRead = await get_user_by_login(db, user_data.login)
 
     return created_user_data
 
 
-async def get_user_by_login(db: db_dependency, login: str) -> UserLoginSchema:
+async def get_user_by_login(db: db_dependency, login: str) -> UserRead:
     statement = select(User).where(User.login == login)
     result = await db.execute(statement)
     user: User = result.scalar()

@@ -1,9 +1,9 @@
 from unittest.mock import AsyncMock, patch
 from uuid import uuid4
 
-from src.models import CodeSnippet
-from src.schemas.snippet import CodeSnippetCreate, CodeSnippetUpdate, CodeSnippetSchema
-from src.services.snippet import create_code_snippet, update_code_snippet, delete_code_snippet
+from models import CodeSnippet
+from schemas.snippet import CodeSnippetCreate, CodeSnippetUpdate, CodeSnippetSchema
+from services.snippet import create_code_snippet, update_code_snippet, delete_code_snippet
 
 
 async def test_create_code_snippet(mock_db):

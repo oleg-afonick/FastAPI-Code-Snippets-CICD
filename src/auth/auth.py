@@ -9,8 +9,8 @@ from jose import jwt, JWTError
 from passlib.context import CryptContext
 from starlette import status
 
-from src.core.config import app_settings
-from src.core.types import RoleEnum
+from core.config import app_settings
+from core.types import RoleEnum
 
 # Секретная фраза для генерации и валидации токенов
 JWT_SECRET = app_settings.jwt_secret  # your_super_secret

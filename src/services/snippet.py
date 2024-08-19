@@ -3,9 +3,9 @@ from typing import Optional
 
 from sqlalchemy.future import select
 
-from src.db.db import db_dependency
-from src.models import CodeSnippet
-from src.schemas.snippet import CodeSnippetCreate, CodeSnippetUpdate, CodeSnippetSchema
+from db.db import db_dependency
+from models import CodeSnippet
+from schemas.snippet import CodeSnippetCreate, CodeSnippetUpdate, CodeSnippetSchema
 
 
 async def get_code_snippet_by_uuid(db: db_dependency, uuid: str):

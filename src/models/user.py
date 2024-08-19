@@ -4,7 +4,7 @@ from sqlalchemy import ForeignKey, String, Column, Integer
 from sqlalchemy.orm import relationship
 
 from .base import Base
-from src.core.types import RoleEnum
+from core.types import RoleEnum
 
 
 class User(Base):

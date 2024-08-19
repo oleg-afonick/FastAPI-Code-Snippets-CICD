@@ -7,10 +7,10 @@ from sqlalchemy import select
 from sqlalchemy.orm import joinedload
 from starlette import status
 
-from src.auth.auth import bcrypt_context, hash_password, generate_salt
-from src.db.db import db_dependency
-from src.models import User
-from src.schemas.user import UserLoginSchema, UserRegisterSchema
+from auth.auth import bcrypt_context, hash_password, generate_salt
+from db.db import db_dependency
+from models import User
+from schemas.user import UserLoginSchema, UserRegisterSchema
 
 
 # Регистрация пользователя
